@@ -41,9 +41,7 @@ export default function App() {
             <View style={styles.repositoryContainer}>
               <Text style={styles.repository}>{item.title}</Text>
               <View style={styles.techsContainer}>
-                {item.techs.split(' ').map((tech, index) => (
-                  <Text style={styles.tech}>{tech}</Text>
-                ))}
+                <Text style={styles.tech}>{item.techs}</Text>
               </View>
 
               <View style={styles.likesContainer}>
@@ -51,9 +49,7 @@ export default function App() {
                   style={styles.likeText}
                   // Remember to replace "1" below with repository ID: {`repository-likes-${repository.id}`}
                   testID={`repository-likes-${item.id}`}
-                >
-                  {item.likes} curtidas
-              </Text>
+                >{item.likes === 1 ? '1 curtida' : `${item.likes} curtidas`}</Text>
               </View>
 
               <TouchableOpacity
